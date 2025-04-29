@@ -1,21 +1,18 @@
-import Navbar from "@/components/navbar"
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import BlogPosts from "@/components/blog-posts"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
+import Hero from "@/app/hero"
+import About from "@/app/about"
+import BlogPosts from "@/app/blog-posts"
+import Contact from "@/app/contact"
+import { PagesLayout } from "@/components/layout/pages-layout"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      <main>
+      <PagesLayout>
         <Hero />
         <About />
         <BlogPosts />
         <Contact />
-      </main>
-      <Footer />
+      </PagesLayout>
     </div>
   )
 }

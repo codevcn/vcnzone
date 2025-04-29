@@ -18,6 +18,9 @@ module.exports = {
     },
     extend: {
       colors: {
+        "regular-white-cl": "var(--vz-regular-white-cl)",
+        "regular-black-cl": "var(--vz-regular-black-cl)",
+        "regular-blue-cl": "var(--vz-regular-blue-cl)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
