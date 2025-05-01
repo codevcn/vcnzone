@@ -1,13 +1,10 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+// @filename tailwind.config.js
+
+import type { Config } from "tailwindcss"
+
+const config: Config = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -20,7 +17,15 @@ module.exports = {
       colors: {
         "regular-white-cl": "var(--vz-regular-white-cl)",
         "regular-black-cl": "var(--vz-regular-black-cl)",
+        "regular-darkgray-cl": "var(--vz-regular-darkgray-cl)",
         "regular-blue-cl": "var(--vz-regular-blue-cl)",
+        "regular-gray-txtcl": "var(--vz-regular-gray-txtcl)",
+        "regular-bordercl": "var(--vz-regular-bordercl)",
+        "regular-slightgray-cl": "var(--vz-regular-slightgray-cl)",
+        "regular-navbar-blur-bgcl": "var(--vz-regular-navbar-blur-bgcl)",
+        "regular-input-underline-cl": "var(--vz-regular-input-underline-cl)",
+        "regular-placeholder-cl": "var(--vz-regular-placeholder-cl)",
+        "regular-divider-cl": "var(--vz-regular-divider-cl)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -62,12 +67,12 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -78,3 +83,5 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
+
+export default config

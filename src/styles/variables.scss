@@ -1,5 +1,20 @@
 :root {
+  // colors
   --vz-regular-white-cl: #fff;
-  --vz-regular-black-cl: #000;
+  --vz-regular-black-cl: #0f0f0f;
+  --vz-regular-darkgray-cl: #212121;
   --vz-regular-blue-cl: #2ba6ff;
+  --vz-regular-gray-cl: #a7abbe;
+  --vz-regular-slightgray-cl: #353742;
+
+  // components
+  --vz-regular-gray-txtcl: var(--vz-regular-gray-cl);
+  --vz-regular-bordercl: #3d3d3d;
+  --vz-regular-divider-cl: var(--vz-regular-bordercl);
+  --vz-regular-navbar-blur-bgcl: rgba(15 15 15 / 0.7);
+  --vz-regular-input-underline-cl: #a7abbe95;
+  --vz-regular-placeholder-cl: #858793;
+  --vz-regular-scrollbar-cl: #a4a4a4;
+  --vz-regular-scrollbar-hovercl: #c0c0c1;
+  --vz-regular-scrollbar-trackcl: transparent;
 }

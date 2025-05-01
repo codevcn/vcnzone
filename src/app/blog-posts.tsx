@@ -6,8 +6,46 @@ import {
   CardTitle,
 } from "@/components/materials/card"
 import { Button } from "@/components/materials/button"
-import Link from "next/link"
 import { ArrowRight, Calendar, Clock } from "lucide-react"
+import type { TPostData } from "@/utils/types/data"
+
+type TPostItemProps = {
+  postData: TPostData
+}
+
+const PostItem = ({ postData }: TPostItemProps) => {
+  const { category, date, excerpt, id, readTime, title } = postData
+
+  return (
+    <Card key={id} className="overflow-hidden bg-regular-slightgray-cl border-none">
+      <CardHeader className="p-4 md:p-6">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <span className="rounded-full bg-[#2BA6FF]/10 px-2 py-1 text-sm font-medium text-regular-blue-cl">
+            {category}
+          </span>
+          <div className="flex items-center gap-1 text-regular-gray-txtcl">
+            <Calendar className="h-3 w-3" />
+            <span>{date}</span>
+          </div>
+          <div className="flex items-center gap-1 text-regular-gray-txtcl">
+            <Clock className="h-3 w-3" />
+            <span>{readTime}</span>
+          </div>
+        </div>
+        <CardTitle className="text-xl md:text-2xl text-regular-white-cl">{title}</CardTitle>
+        <CardDescription className="line-clamp-2 text-regular-gray-txtcl">
+          {excerpt}
+        </CardDescription>
+      </CardHeader>
+      <CardFooter className="p-4 pt-0 md:p-6 md:pt-0">
+        <Button className="px-0 text-regular-blue-cl hover:bg-regular-blue-cl hover:text-regular-white-cl">
+          <span>Read more </span>
+          <ArrowRight className="ml-1 h-4 w-4" />
+        </Button>
+      </CardFooter>
+    </Card>
+  )
+}
 
 export default function BlogPosts() {
   const posts = [
@@ -52,55 +90,26 @@ export default function BlogPosts() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-[#2BA6FF] px-3 py-1 text-sm text-white">
+            <div className="inline-block rounded-lg bg-regular-blue-cl px-3 py-1 text-base text-regular-white-cl">
               Blog
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Latest Articles</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <h2 className="text-3xl font-bold tracking-tighter text-regular-white-cl sm:text-5xl">
+              Latest Articles
+            </h2>
+            <p className="max-w-[900px] text-regular-gray-txtcl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Thoughts, tutorials, and insights about web development and programming.
             </p>
           </div>
         </div>
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2">
           {posts.map((post) => (
-            <Card
-              key={post.id}
-              className="overflow-hidden border border-[#2BA6FF]/10 hover:border-[#2BA6FF]/30 transition-all"
-            >
-              <CardHeader className="p-4 md:p-6">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="rounded-full bg-[#2BA6FF]/10 px-2 py-1 text-xs font-medium text-[#2BA6FF]">
-                    {post.category}
-                  </span>
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    <span>{post.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-                <CardTitle className="text-xl md:text-2xl">{post.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{post.excerpt}</CardDescription>
-              </CardHeader>
-              <CardFooter className="p-4 pt-0 md:p-6 md:pt-0">
-                <Button variant="link" className="px-0 text-[#2BA6FF]">
-                  Read more <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardFooter>
-            </Card>
+            <PostItem key={post.id} postData={post} />
           ))}
         </div>
         <div className="flex justify-center">
-          <Button
-            asChild
-            variant="outline"
-            className="border-[#2BA6FF] text-[#2BA6FF] hover:bg-[#2BA6FF] hover:text-white"
-          >
-            <Link href="#">
-              View All Posts <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button className="border-2 border-regular-blue-cl bg-transparent text-regular-white-cl hover:bg-regular-blue-cl hover:text-regular-white-cl">
+            <span>View All Posts </span>
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
