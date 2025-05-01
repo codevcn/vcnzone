@@ -38,7 +38,7 @@ const PostItem = ({ postData }: TPostItemProps) => {
         </CardDescription>
       </CardHeader>
       <CardFooter className="p-4 pt-0 md:p-6 md:pt-0">
-        <Button className="px-0 text-regular-blue-cl hover:bg-regular-blue-cl hover:text-regular-white-cl">
+        <Button className="text-regular-blue-cl hover:bg-regular-blue-cl hover:text-regular-white-cl">
           <span>Read more </span>
           <ArrowRight className="ml-1 h-4 w-4" />
         </Button>

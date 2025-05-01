@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "@/lib/utils"
 import { useRef } from "react"
 
 type TAutosizeTextFieldProps = Partial<{
@@ -60,7 +61,10 @@ const AutosizeTextField = ({
         ref={textareaRef}
         onChange={handleChange}
         placeholder={placeholder}
-        className={`${className} peer/txtfld relative z-30 w-full p-2 overflow-y-auto overflow-x-hidden text-base bg-regular-slightgray-cl outline-none rounded text-inherit placeholder:text-regular-placeholder-cl resize-none`}
+        className={cn(
+          "peer/txtfld relative z-30 w-full p-2 overflow-y-auto overflow-x-hidden text-base bg-regular-slightgray-cl outline-none rounded text-inherit placeholder:text-regular-placeholder-cl resize-none",
+          className,
+        )}
         style={{
           height: `${minHeight}px`, // Đặt chiều cao ban đầu là minHeight
         }}

@@ -61,7 +61,7 @@ const MobileButtonSection = () => {
         onOpenChange={setIsMenuOpen}
         pannelProps={{ className: "min-w-[300px]" }}
         trigger={
-          <Button className="md:hidden border-none" onClick={toggleMenu}>
+          <Button className="md:hidden border-none p-0" onClick={toggleMenu}>
             <Menu className="h-6 w-6" />
           </Button>
         }

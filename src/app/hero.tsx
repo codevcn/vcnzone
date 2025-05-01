@@ -32,7 +32,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <div className="relative h-[350px] w-[350px] overflow-hidden rounded-full border-4 border-regular-blue-cl bg-regular-slightgray-cl">
+            <div className="relative h-[300px] w-[300px] overflow-hidden rounded-full border-4 border-regular-blue-cl bg-regular-slightgray-cl">
               <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-regular-blue-cl">
                 LTL
               </div>
